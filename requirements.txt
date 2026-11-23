@@ -1,0 +1,19 @@
+# Core (needed for everything)
+numpy>=1.22
+scipy>=1.8
+astropy>=5.0
+matplotlib>=3.5
+pandas>=1.4
+lightkurve>=2.4          # downloads Kepler/TESS data from MAST
+
+# Optional but recommended
+batman-package>=2.4.9    # physical (Mandel-Agol) transit model, Week 3
+setuptools               # batman needs this on Python >= 3.12
+wotan>=1.10              # fast biweight detrending (Hippke et al. 2019)
+tqdm                     # progress bars for injection-recovery
+pytest>=7                # run the tests
+
+# Going further (uncomment if you need them)
+# transitleastsquares>=1.32   # TLS: a limb-darkened alternative to BLS
+# emcee>=3.1                  # MCMC for honest error bars
+# corner>=2.2                 # corner plots for MCMC posteriors

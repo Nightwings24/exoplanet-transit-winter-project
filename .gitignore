@@ -1,0 +1,38 @@
+# data and outputs: never commit downloaded FITS or big result tables
+data/*
+!data/.gitkeep
+results/
+*.fits
+*.fits.gz
+.lightkurve/
+.lightkurve-cache/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# notebooks
+.ipynb_checkpoints/
+
+# LaTeX build products
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.bbl
+docs/*.blg
+docs/*.fls
+docs/*.fdb_latexmk
+docs/*.synctex.gz
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

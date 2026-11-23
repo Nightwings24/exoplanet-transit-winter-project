@@ -1,0 +1,25 @@
+# Local install:   conda env create -f environment.yml
+#                  conda activate exotransit
+#                  pip install -e .
+name: exotransit
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - astropy
+  - matplotlib
+  - pandas
+  - jupyterlab
+  - ipykernel
+  - tqdm
+  - pytest
+  - pip
+  - pip:
+      - lightkurve>=2.4
+      - batman-package>=2.4.9
+      - wotan>=1.10
+      - transitleastsquares>=1.32
+      - emcee>=3.1
+      - corner>=2.2

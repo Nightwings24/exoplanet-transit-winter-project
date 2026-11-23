@@ -1,0 +1,100 @@
+%% ===========================================================================
+%%  Report template -- Exoplanet Transit Detection Winter Project
+%%  Copy this file into your own repo (e.g. report/report.tex), fill it in,
+%%  and compile with pdflatex + bibtex (or upload to Overleaf).
+%%  Target length: 4 pages (freshmen/sophomores) to 6 pages (juniors/seniors).
+%% ===========================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+\newcommand{\Rearth}{\ensuremath{R_\oplus}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\title{\todo{A title that states your result}\\[2pt]
+       \large e.g.\ ``Recovering Kepler-10\,b and measuring the detection efficiency of a simple transit pipeline''}
+\author{\todo{Your Name}\\ \small Astronomy Club Winter Project \quad
+        \href{https://github.com/YOU/REPO}{github.com/YOU/REPO}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\todo{At most 150 words. One sentence each: the question; the data; the method; the main
+results WITH NUMBERS (planet radius $\pm$ error; completeness or $S_{50}$); the one conclusion.}
+\end{abstract}
+
+\section{Introduction}
+\todo{The transit method in two or three sentences, with Eq.~\eqref{eq:depth}. Why measuring the
+completeness of a search matters (occurrence rates). What you did in this project, in one paragraph.}
+\begin{equation}
+  \delta \simeq \left(R_p/R_\star\right)^2 \label{eq:depth}
+\end{equation}
+
+\section{Data}
+\todo{Mission, target(s), quarters/sectors, cadence, flux type (PDCSAP), number of points,
+time span. Stellar parameters with their source in a table like Table~\ref{tab:star}.}
+\begin{table}[h]
+\centering
+\caption{Stellar and published planetary parameters.}
+\label{tab:star}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Parameter & Value & Source\\
+\midrule
+$R_\star$ [$R_\odot$] & \todo{} & \todo{e.g.\ NASA Exoplanet Archive / TIC}\\
+$M_\star$ [$M_\odot$] & \todo{} & \\
+Published $P$ [d] & \todo{} & \\
+Published $R_p$ [\Rearth] & \todo{} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Methods}
+\subsection{Detrending}
+\todo{Method, window length and why; gap handling; sigma clipping (upper only, why).
+Second pass with transits masked.}
+\subsection{Transit search}
+\todo{BLS: period range, duration grid, oversampling; detection statistic and threshold.}
+\subsection{Transit fit}
+\todo{Model (trapezoid / batman), free and fixed parameters, limb darkening coefficients and
+source, supersampling, priors; how uncertainties were estimated.}
+\subsection{Injection--recovery}
+\todo{Grid in period and radius, injections per cell, how $P$, $R_p$, $t_0$ were drawn,
+injection model, and your exact recovery criteria. State that the pipeline settings were frozen.}
+
+\section{Results}
+\todo{Periodogram figure; folded transit with model; table comparing $R_p$ estimates with
+literature; completeness map; efficiency curve with $S_{50}$; your controlled experiment.}
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{../figures/fold.png}
+%   \caption{Folded light curve of ... with the best-fit model. Note ...}
+%   \label{fig:fold}
+% \end{figure}
+
+\section{Discussion}
+\todo{Does your radius agree with the literature (within how many sigma)? If not, why?
+What limits your pipeline, according to the completeness map? What would you change next,
+and what would you expect to gain?}
+
+\section{Conclusions}
+\todo{Three bullet points.}
+
+\paragraph{Acknowledgements.} This paper includes data collected by the Kepler/TESS mission,
+obtained from the MAST data archive at the Space Telescope Science Institute (STScI).
+This work used Lightkurve~\citep{Lightkurve2018}, Astropy~\citep{Astropy2022}, NumPy, SciPy and Matplotlib.
+\todo{Mention people who helped, and how you used AI tools, if at all.}
+
+\bibliographystyle{plainnat}
+\bibliography{../docs/references}   % or your own .bib file
+
+\end{document}

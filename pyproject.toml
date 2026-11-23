@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transitpipe"
+version = "0.1.0"
+description = "A small, teachable exoplanet transit-detection and injection-recovery pipeline"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+    "astropy>=5.0",
+    "matplotlib>=3.5",
+    "pandas>=1.4",
+]
+
+[project.optional-dependencies]
+data = ["lightkurve>=2.4"]
+models = ["batman-package>=2.4.9", "setuptools", "wotan>=1.10"]
+extras = ["transitleastsquares>=1.32", "emcee>=3.1", "corner>=2.2", "tqdm"]
+dev = ["pytest>=7"]
+all = ["transitpipe[data,models,extras,dev]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
