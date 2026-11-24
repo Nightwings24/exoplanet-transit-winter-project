@@ -16,11 +16,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
-% Fonts: Palatino-style (newpx) + TeX Gyre Heros headings when installed
+% Fonts: Palatino-style (newpx, with TeX Gyre Heros sans) when installed
 % (Overleaf, full TeX Live); otherwise fall back to Latin Modern.
 \IfFileExists{newpxtext.sty}{%
-  \usepackage{newpxtext,newpxmath}%
-  \IfFileExists{tgheros.sty}{\usepackage[scale=0.9]{tgheros}}{}%
+  \usepackage[helvratio=0.9]{newpxtext}\usepackage{newpxmath}% sans = TeX Gyre Heros
 }{%
   \usepackage{lmodern}%
 }
@@ -900,8 +899,9 @@ End & \textbf{Demo Day:} 5-minute talks or posters, 2 minutes of questions each.
 
 \begin{code}
 python scripts/run_injection_recovery.py --synthetic --fast          # 30-second demo
-python scripts/run_injection_recovery.py --target "Kepler-10" --mission Kepler --quarter 3 \
-    --rstar 1.065 --mask-period 0.83766 --mask-t0 260.537 --mask-duration 0.08 \
+python scripts/run_injection_recovery.py --target "Kepler-10" \
+    --mission Kepler --quarter 3 --rstar 1.065 \
+    --mask-period 0.83766 --mask-t0 260.537 --mask-duration 0.08 \
     --method median --window 0.5 --n-per-cell 20 --n-jobs 4
 \end{code}
 
