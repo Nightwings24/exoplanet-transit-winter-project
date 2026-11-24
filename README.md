@@ -116,7 +116,7 @@ The guide compiles with a basic TeX Live install and on Overleaf. It uses Palati
 
 ## Making it your own
 
-1. **Fork** this repo. Your fork is your portfolio piece.
+1. Click **Use this template** at the top of this page to create your own repo. That repo is your portfolio piece.
 2. Add a `LOG.md` and commit at least once per working session.
 3. Replace this README's top section with *your* project: target, headline numbers, one figure, and how to reproduce them.
 4. Tag `v1.0` at Demo Day.

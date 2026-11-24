@@ -192,7 +192,7 @@
   \node[anchor=south west,text=white!60!night,font=\sffamily\small,align=left]
      at ($(current page.south west)+(1.8,2.0)$)
      {Project guide, resource compendium \& week-by-week plan\\
-      Companion code: \texttt{exoplanet-transit-winter-project} (GitHub)\\
+      Companion code: \href{https://github.com/Nightwings24/exoplanet-transit-winter-project}{\texttt{github.com/Nightwings24/exoplanet-transit-winter-project}}\\
       Version 1.0 \textperiodcentered{} \today};
 \end{tikzpicture}
 \end{titlepage}
@@ -589,17 +589,19 @@ transits~\citep{Thompson2018}. That is a good Going Further task.
 
 \subsection{Option A: Google Colab (zero install, recommended for Week 1)}
 \begin{enumerate}
-  \item Fork the project repository on GitHub (button top right), so you have your own copy.
+  \item Open the project repository:\\
+        \href{https://github.com/Nightwings24/exoplanet-transit-winter-project}{\texttt{github.com/Nightwings24/exoplanet-transit-winter-project}}\\
+        Click \emph{Use this template} \(\to\) \emph{Create a new repository}. That repository is your own copy.
   \item Open a notebook from the \texttt{notebooks/} folder via its ``Open in Colab'' badge.
-  \item In the first cell, change \texttt{REPO\_URL} to your fork and run it. It clones the repo and installs packages
+  \item In the first cell, change \texttt{REPO\_URL} to your repo and run it. It clones the repo and installs packages
         (\(\sim\)1\,min). Colab forgets everything after a disconnect: rerun the first cell.
   \item Save your work back to GitHub: \emph{File \(\to\) Save a copy in GitHub}.
 \end{enumerate}
 
 \subsection{Option B: your own computer (recommended from Week 2)}
 \begin{code}
-git clone https://github.com/<you>/exoplanet-transit-winter-project.git
-cd exoplanet-transit-winter-project
+git clone https://github.com/<you>/<your-repo>.git   # your copy from the template
+cd <your-repo>
 # conda users:
 conda env create -f environment.yml
 conda activate exotransit
@@ -655,6 +657,7 @@ lc = io.get_lightcurve("Kepler-10", mission="Kepler", exptime="long", quarter=[3
 \end{itemize}
 
 % =========================================================================
+\newpage
 \section{The four-week plan}
 \label{sec:plan}
 
@@ -662,7 +665,6 @@ Each week lists: goals, a session-by-session plan with time estimates, the check
 Further box. Hours are a guide for the core track. Notebook numbers refer to \texttt{notebooks/}.
 
 % ------------------------------------------------------------------ WEEK 1 --
-\newpage
 \weekbanner{1}{Foundations}{Python from zero, the transit method, and your first real light curve}
 
 \textbf{Goals.} Everyone can run Python in a notebook, use NumPy arrays and boolean masks, make labelled plots and use
@@ -676,7 +678,7 @@ Kepler light curve and chosen a personal target.
 \textbf{When} & \textbf{Task} & \textbf{Hours}\\
 \midrule
 Session A & \textbf{Kick-off.} Talk: exoplanets, the transit method, Kepler and TESS (30\,min). Live demo: a Kepler-10 light curve
-in Colab in 5\,minutes. Everyone: GitHub account, fork the repo, open Notebook~00. & \hrs{2}\\
+in Colab in 5\,minutes. Everyone: GitHub account, create your repo from the template, open Notebook~00. & \hrs{2}\\
 Self & \textbf{Notebook 00: Python crash course.} Variables, functions, NumPy, boolean masks, Matplotlib; build a fake transit and
 fold it. Juniors/seniors: skim and help. & \hrs{3--4}\\
 Self & \textbf{Git basics.} Software Carpentry \emph{Version Control with Git}, episodes 1--7 (or GitHub Skills ``Introduction to GitHub'').
@@ -693,7 +695,7 @@ Self & Finish Notebook 01 on your target. Start \texttt{LOG.md}. Commit. & \hrs{
 
 \begin{checkpoint}
 \begin{checklist}
-  \item Your fork exists, has a README stating your target, and Notebooks~00 and~01 run top to bottom.
+  \item Your repo exists, has a README stating your target, and Notebooks~00 and~01 run top to bottom.
   \item \emph{Your turn} answers written in your own words (markdown cells).
   \item A labelled plot of your target's raw light curve, saved in \texttt{figures/}.
   \item A table in your README: star name, \(R_\star\pm\sigma\), \(M_\star\pm\sigma\), published planet \(P\) and \(R_p\), with sources.
@@ -1217,8 +1219,8 @@ Colab: ``session crashed'' & Out of memory: fewer quarters or a smaller injectio
 \label{app:organisers}
 
 \begin{instructor}
-\textbf{One week before:} create a GitHub organisation and make the repo a \emph{template}; replace \texttt{YOUR-ORG} in the notebooks
-and README; run every notebook in Colab yourself; download the Kepler-10 quarters 3--4 FITS files to a shared drive in case MAST is
+\textbf{One week before:} the repo is already a public \emph{template}. If you move it to a club organisation, update the user name
+in the README badges and in the notebooks' first cell; run every notebook in Colab yourself; download the Kepler-10 quarters 3--4 FITS files to a shared drive in case MAST is
 down on day 1; set up a chat channel with one thread per week.
 
 \textbf{Mentoring:} pair each freshman/sophomore with a junior/senior for Session~B. Rotate pairs in Week~3.
